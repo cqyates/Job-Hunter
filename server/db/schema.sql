@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS jobOrganizerDB;
+CREATE DATABASE jobOrganizerDB
