@@ -2,7 +2,7 @@ import React from "react"
 
 const Project = () => {
     return (
-        <h3>Profile for User</h3>
+        <h3>Project Page for User</h3>
     )
 }
 
