@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 
 const HomePage = () => {
+    const [user, setUser] = useState({})
     return (
         <>
         <h3>Welcome to Job Hunter</h3>
