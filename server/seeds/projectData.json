@@ -4,20 +4,20 @@
     "description": "A react application with mysql and sequelize",
     "deployedLink": "www.google.com",
     "githubLink": "www.google.com",
-    "imgSrc": "placeholder"
+    "imageSrc": "placeholder"
   },
   {
     "title": "React Image Finder",
     "description": "A react application with unsplash API Calls",
     "deployedLink": "www.google.com",
     "githubLink": "www.google.com",
-    "imgSrc": "placeholder"
+    "imageSrc": "placeholder"
   },
   {
     "title": "Weather Dashboard",
     "description": "An HTML, CSS and Javascript",
     "deployedLink": "www.google.com",
     "githubLink": "www.google.com",
-    "imgSrc": "placeholder"
+    "imageSrc": "placeholder"
   }
 ]

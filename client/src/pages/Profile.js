@@ -4,7 +4,7 @@ import Auth from "../utils/auth.js";
 const Profile = () => {
     const [userData, setUserData] = useState({})
 
-    const userDataLength = Object.keys(userData).length;
+   
     //get email from the req.body or req.params
     //run fetch request to backend
     
