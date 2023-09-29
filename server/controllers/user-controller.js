@@ -1,13 +1,14 @@
 // import user model
-const { User } = require('../models');
+const { User, Project } = require('../models');
 // import sign token function from auth
 const { signToken } = require('../utils/auth');
 
 module.exports = {
-  // get a single user by either their id or their username
+  // get a single user by their id
   async getMe(req, res) {
-    console.log(req.params)
-    const user = await User.findByPk(req.params.id)
+    console.log(req.body.userId)
+
+    const user = await User.findByPk(req.body.userId, {include: [Project]})
 
     if (!user) {
       return res.status(400).json({ message: 'Cannot find a user with this id!' });
@@ -15,7 +16,12 @@ module.exports = {
 
     res.json(user);
   },
+  async getAllUsers(req, res) {
+    const users = await User.findAll({include: [Project]})
+    res.json(users)
+  },
   // create a user, sign a token, and send it back (to client/src/components/SignUpForm.js)
+  // Insomnia tested. token makes it to response
   async createUser({ body }, res) {
     const user = await User.create(body);
 
@@ -27,13 +33,14 @@ module.exports = {
   },
   // login a user, sign a token, and send it back (to client/src/components/LoginForm.js)
   // {body} is destructured req.body
+  // tested with insomnia
   async loginUser({ body }, res) {
     const userData = await User.findOne({ where: { email: body.email } });
     if (!userData) {
       return res.status(400).json({ message: "Can't find this user" });
     }
 
-    const correctPw = await userData.checkPassword(body.password);
+    const correctPw = userData.checkPassword(body.password);
 
     if (!correctPw) {
       return res.status(400).json({ message: 'Wrong password!' });
