@@ -10,7 +10,7 @@ import HomePage from './pages/Home';
 import ProfilePage from './pages/Profile'
 import ProjectPage from './pages/Project'
 import SavedJobsPage from "./pages/SavedJobs"
-
+import SeekersPage from "./pages/Seekers"
 const router = createBrowserRouter([
   {
     path: '/',
@@ -32,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: 'savedJobs',
         element: <SavedJobsPage/>,
+      },
+      {
+        path: 'jobSeekers',
+        element: <SeekersPage/>,
       },
     ],
   },
