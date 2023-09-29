@@ -1,0 +1,7 @@
+.user-card {
+  box-shadow: 2px 2px 7px 2px rgba(30, 3, 3, 0.835)
+}
+
+.user-card:hover {
+  box-shadow: 2px 2px 7px 2px rgba(187, 18, 18, 0.835)
+}
