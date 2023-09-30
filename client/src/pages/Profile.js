@@ -1,8 +1,6 @@
-import React, {useState, useEffect} from "react"
-import {getGithubProfile, getMe} from "../utils/API";
-import Auth from "../utils/auth.js";
+import React from "react"
+import ProfileForm from "../components/ProfileForm"
 const Profile = () => {
-    const [userData, setUserData] = useState({})
 
    
     //get email from the req.body or req.params
@@ -11,8 +9,7 @@ const Profile = () => {
 
     return (
         <>
-        <h3>Profile for User</h3>
-        <h4>Show Github Profile from API Here</h4>
+        <ProfileForm/>
         </>
     )
 }
