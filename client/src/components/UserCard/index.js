@@ -2,12 +2,14 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
+import defaultMan from "../../images/default_man.jpg"
+import defaultWoman from "../../images/default_woman.jpg"
 import "./style.css"
 
 const UserCard = ({ username, id }) => {
   return (
     <Card key={id} className="user-card" style={{ width: '18rem', margin: "2em"}}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Img variant="top" src={defaultMan} />
       <Card.Body>
         <Card.Title>{username}</Card.Title>
         <Card.Text>Something Goes Here
