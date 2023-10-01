@@ -1,12 +1,11 @@
 // import user model
-const { User, Project } = require('../models');
+const { User, Project, Profile} = require('../models');
 // import sign token function from auth
 const { signToken } = require('../utils/auth');
 
 module.exports = {
   // get a single user by their id
   async getMe(req, res) {
-    console.log(req.body.userId)
 
     const user = await User.findByPk(req.body.userId, {include: [Project]})
 
@@ -17,7 +16,7 @@ module.exports = {
     res.json(user);
   },
   async getAllUsers(req, res) {
-    const users = await User.findAll({include: [Project]})
+    const users = await User.findAll({include: [Project, Profile]})
     res.json(users)
   },
   // create a user, sign a token, and send it back (to client/src/components/SignUpForm.js)
@@ -48,7 +47,14 @@ module.exports = {
     const token = signToken(userData);
     res.json({ token, userData });
   },
-
+  async createProfile({body}, res) {
+    try {
+      const profileData = await Profile.create(body)
+      res.status(200).json(profileData)
+    } catch (error) {
+      res.status(500).json(error)
+    }
+  }
   
  
 };
