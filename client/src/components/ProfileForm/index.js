@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
-import { submitForm } from '../../utils/API.js';
+import { submitProfile } from '../../utils/API.js';
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
 const ProfileForm = () => {
@@ -31,8 +31,8 @@ const ProfileForm = () => {
     }
 
     try {
-      const response = submitForm(userFormData);
-
+      const response = await submitProfile(userFormData);
+      console.log(response)
       if (!response.ok) {
         throw new Error('something went wrong!');
       }

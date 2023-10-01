@@ -37,7 +37,7 @@ export const getUsers = () => {
     },
   });
 };
-export const submitForm = (userData) => {
+export const submitProfile = (userData) => {
   return fetch('/api/users/profile', {
     method: 'POST',
     headers: {
