@@ -24,6 +24,9 @@ const MyNavbar = () => {
                   <Nav.Link as={Link} to="/profile">
                     View My Profile
                   </Nav.Link>
+                  <Nav.Link as={Link} to="/create">
+                    Create Profile
+                  </Nav.Link>
                   <Nav.Link as={Link} to="/savedJobs">
                     See Your Jobs
                   </Nav.Link>

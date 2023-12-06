@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ErrorPage from "./pages/Error";
 import HomePage from './pages/Home';
-import ProfilePage from './pages/Profile'
+import CreateProfilePage from './pages/CreateProfile'
 import ProjectPage from './pages/Project'
 import SavedJobsPage from "./pages/SavedJobs"
 import SeekersPage from "./pages/Seekers"
@@ -21,9 +21,13 @@ const router = createBrowserRouter([
         index: true,
         element: <HomePage />,
       },
+      // {
+      //   path: 'profile',
+      //   element: <ProfilePage />,
+      // },
       {
-        path: 'profile',
-        element: <ProfilePage />,
+        path: 'create',
+        element: <CreateProfilePage />,
       },
       {
         path: 'project',

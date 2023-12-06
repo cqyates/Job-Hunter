@@ -9,7 +9,7 @@ import "./style.css"
 const UserCard = ({ username, id }) => {
   return (
     <Card key={id} className="user-card" style={{ width: '18rem', margin: "2em"}}>
-      <Card.Img variant="top" src={defaultMan} />
+      <Card.Img variant="top" src={defaultWoman} />
       <Card.Body>
         <Card.Title>{username}</Card.Title>
         <Card.Text>Something Goes Here
