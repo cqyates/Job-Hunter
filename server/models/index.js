@@ -1,17 +1,14 @@
 const User = require("./User");
 const Project = require("./Projects");
 const Job = require("./Jobs");
-const Profile = require("./Profile")
-User.hasOne(Profile, {
-    foreignKey: "userId"
-})
-Profile.belongsTo(User, {
-    foreignKey: "userId"
-})
+const UserProfile = require("./UserProfile")
+
+User.hasOne(UserProfile);
+UserProfile.belongsTo(User);
 User.hasMany(Project, {
     foreignKey: "userId"
 })
 Project.belongsTo(User, {
     foreignKey: "userId"
 })
-module.exports = {User, Job, Project, Profile}
+module.exports = {User, Job, Project, UserProfile}

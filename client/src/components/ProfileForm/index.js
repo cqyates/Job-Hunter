@@ -9,6 +9,17 @@ const ProfileForm = () => {
     last_name: '',
     contact_email: '',
     github_username: '',
+    profile_image: '',
+    profile_url: '',
+    home_phone: '',
+    cell_phone: '',
+    github_url: '',
+    linkedin_url: '',
+    facebook_url: '',
+    indeed_url: '',
+    monster_url: '',
+    dice_url: '',
+    zipRecruiter_url: '',
   });
 
   const [validated] = useState(false);
@@ -32,7 +43,7 @@ const ProfileForm = () => {
 
     try {
       const response = await submitProfile(userFormData);
-      console.log(response)
+      console.log(response);
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
@@ -46,11 +57,26 @@ const ProfileForm = () => {
       last_name: '',
       contact_email: '',
       github_username: '',
+      profile_image: '',
+      home_phone: '',
+      cell_phone: '',
+      github_url: '',
+      linkedin_url: '',
+      facebook_url: '',
+      indeed_url: '',
+      monster_url: '',
+      dice_url: '',
+      zipRecruiter_url: '',
     });
   };
 
   return (
-    <Form className="profile-form" noValidate validated={validated} onSubmit={handleFormSubmit}>
+    <Form
+      className="profile-form"
+      noValidate
+      validated={validated}
+      onSubmit={handleFormSubmit}
+    >
       <Alert
         dismissible
         onClose={() => setShowAlert(false)}
@@ -105,22 +131,150 @@ const ProfileForm = () => {
         <Form.Label htmlFor="github_username">Github Username</Form.Label>
         <Form.Control
           type="text"
-          placeholder="Github "
+          placeholder="Github"
           name="github_username"
           onChange={handleInputChange}
           value={userFormData.github_username}
           required
         />
         <Form.Control.Feedback type="invalid">
-         Github Username is required!
+          Github Username is required!
         </Form.Control.Feedback>
       </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label htmlFor="profile_image">Profile Image</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Profile Image"
+          name="image"
+          onChange={handleInputChange}
+          value={userFormData.profile_image}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label htmlFor="profile_url">Portfolio Website</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Portfolio Page"
+          name="profile_url"
+          onChange={handleInputChange}
+          value={userFormData.profile_url}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label htmlFor="home_phone">Home Phone</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Home Phone "
+          name="home_phone"
+          onChange={handleInputChange}
+          value={userFormData.home_phone}
+        />
+    
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label htmlFor="cell_phone">Cell Phone</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Cell Phone"
+          name="cell_phone"
+          onChange={handleInputChange}
+          value={userFormData.cell_phone}
+        />
+    
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label htmlFor="github_url">Github Url</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Github Homepage"
+          name="github_url"
+          onChange={handleInputChange}
+          value={userFormData.github_url}
+        />
+    
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label htmlFor="linkedin_url">Linkedin Homepage</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Linkedin Home Page"
+          name="linkedin_url"
+          onChange={handleInputChange}
+          value={userFormData.linkedin_url}
+        />
+    
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label htmlFor="facebook_url">Facebook Home Page</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Facebook Home Page"
+          name="facebook_url"
+          onChange={handleInputChange}
+          value={userFormData.facebook_url}
+        />
+    
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label htmlFor="indeed_url">Indeed Home Page</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Indeed Home Page"
+          name="indeed_url"
+          onChange={handleInputChange}
+          value={userFormData.indeed_url}
+        />
+    
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label htmlFor="monster_url">Monster Home Page</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Monster Home Page"
+          name="monster_url"
+          onChange={handleInputChange}
+          value={userFormData.monster_url}
+        />
+    
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label htmlFor="dice_url">Dice Home Page</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Dice Home Page"
+          name="dice_url"
+          onChange={handleInputChange}
+          value={userFormData.dice_url}
+        />
+    
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label htmlFor="zipRecruiter_url">zipRecruiter Home Page</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Zip Recruiter Home Page"
+          name="zipRecruiter_url"
+          onChange={handleInputChange}
+          value={userFormData.zipRecruiter_url}
+        />
+    
+      </Form.Group>
       <Button
-          disabled={!(userFormData.first_name && userFormData.last_name && userFormData.contact_email && userFormData.github_username)}
-          type='submit'
-          variant='success'>
-          Submit
-        </Button>
+        disabled={
+          !(
+            userFormData.first_name &&
+            userFormData.last_name &&
+            userFormData.contact_email &&
+            userFormData.github_username &&
+            userFormData.profile_url
+          )
+        }
+        type="submit"
+        variant="success"
+      >
+        Submit
+      </Button>
     </Form>
   );
 };

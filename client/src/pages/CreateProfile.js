@@ -1,6 +1,6 @@
 import React from "react"
 import ProfileForm from "../components/ProfileForm"
-const Profile = () => {
+const CreateProfile = () => {
 
    
     //get email from the req.body or req.params
@@ -14,4 +14,4 @@ const Profile = () => {
     )
 }
 
-export default Profile
+export default CreateProfile
